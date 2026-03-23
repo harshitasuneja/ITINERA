@@ -1,0 +1,58 @@
+id,city,name,category,rating,indoor,wheelchair_accessible,braille,audio_guide
+1,Paris,The Louvre,history,4.9,true,true,true,true
+2,Paris,Eiffel Tower,sightseeing,4.8,false,true,true,true
+3,Paris,Notre Dame Cathedral,history,4.7,true,false,false,true
+4,Tokyo,Senso-ji Temple,history,4.7,false,true,false,true
+5,Tokyo,Tokyo Skytree,sightseeing,4.8,true,true,true,true
+6,Tokyo,Shinjuku Gyoen National Garden,nature,4.8,false,true,false,false
+7,New York,Metropolitan Museum of Art,history,4.9,true,true,true,true
+8,New York,Central Park,nature,4.8,false,true,false,false
+9,New York,Empire State Building,sightseeing,4.7,true,true,true,true
+10,Dubai,Burj Khalifa,sightseeing,4.9,true,true,true,true
+11,Dubai,Dubai Mall,shopping,4.8,true,true,true,false
+12,Dubai,Desert Safari,adventure,4.7,false,false,false,false
+13,London,British Museum,history,4.8,true,true,true,true
+14,London,London Eye,sightseeing,4.7,false,true,false,true
+15,London,Tower of London,history,4.6,false,false,false,true
+16,Barcelona,Sagrada Familia,history,4.9,true,true,true,true
+17,Barcelona,Park Guell,nature,4.7,false,false,false,true
+18,Barcelona,Gothic Quarter Tour,history,4.6,false,true,false,false
+19,Singapore,Gardens by the Bay,nature,4.9,false,true,false,true
+20,Singapore,Universal Studios,adventure,4.8,false,true,false,false
+21,Singapore,National Museum,history,4.7,true,true,true,true
+22,Bangkok,Grand Palace,history,4.8,false,false,false,true
+23,Bangkok,Wat Arun,history,4.7,false,false,false,false
+24,Bangkok,Chatuchak Market,shopping,4.6,false,true,false,false
+25,Bali,Uluwatu Temple,history,4.7,false,false,false,false
+26,Bali,Sacred Monkey Forest,nature,4.6,false,false,false,false
+27,Bali,Rice Terraces Trek,adventure,4.8,false,false,false,false
+28,Venice,St Mark's Basilica,history,4.8,true,true,false,true
+29,Venice,Doge's Palace,history,4.7,true,true,true,true
+30,Venice,Gondola Ride,sightseeing,4.8,false,false,false,false
+31,Vienna,Schonbrunn Palace,history,4.9,true,true,true,true
+32,Vienna,Belvedere Museum,history,4.8,true,true,true,true
+33,Vienna,Prater Amusement Park,adventure,4.6,false,true,false,false
+34,Istanbul,Hagia Sophia,history,4.9,true,true,false,true
+35,Istanbul,Grand Bazaar,shopping,4.7,true,true,false,false
+36,Istanbul,Topkapi Palace,history,4.8,true,true,true,true
+37,New Delhi,Red Fort,history,4.7,false,true,false,true
+38,New Delhi,India Gate,sightseeing,4.6,false,true,false,false
+39,New Delhi,National Museum,history,4.8,true,true,true,true
+40,Los Angeles,Universal Studios Hollywood,adventure,4.8,false,true,true,false
+41,Los Angeles,Griffith Observatory,sightseeing,4.8,true,true,true,true
+42,Los Angeles,Santa Monica Pier,sightseeing,4.6,false,true,false,false
+43,Rio de Janeiro,Christ the Redeemer,sightseeing,4.9,false,true,false,true
+44,Rio de Janeiro,Sugarloaf Mountain,nature,4.8,false,true,false,false
+45,Rio de Janeiro,Copacabana Beach,nature,4.7,false,true,false,false
+46,Sydney,Sydney Opera House,sightseeing,4.9,true,true,true,true
+47,Sydney,Bondi Beach,nature,4.7,false,true,false,false
+48,Sydney,Taronga Zoo,nature,4.8,false,true,false,false
+49,Cape Town,Table Mountain Aerial Cableway,sightseeing,4.8,false,true,false,true
+50,Cape Town,Kirstenbosch Botanical Gardens,nature,4.8,false,true,true,true
+51,Cape Town,Robben Island,history,4.7,false,true,false,true
+52,Nairobi,Nairobi National Park,nature,4.8,false,true,false,false
+53,Nairobi,Giraffe Centre,nature,4.7,false,true,false,false
+54,Nairobi,Karen Blixen Museum,history,4.5,true,true,false,true
+55,Amsterdam,Rijksmuseum,history,4.9,true,true,true,true
+56,Amsterdam,Van Gogh Museum,history,4.8,true,true,true,true
+57,Amsterdam,Anne Frank House,history,4.7,true,false,false,true

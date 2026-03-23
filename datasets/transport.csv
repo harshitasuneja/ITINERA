@@ -1,0 +1,37 @@
+id,city,type,price_per_day,price_per_day_usd,accessible,description
+1,Paris,Paris Metro,8.5,9,false,Fast and reliable but with limited wheelchair access
+2,Paris,Accessible Taxi,60.0,65,true,Wheelchair-accessible mini vans available on demand
+3,Tokyo,JR Pass Subway,10.0,10,true,Highly accessible trains with dedicated staff
+4,Tokyo,Private Accessible Van,80.0,80,true,Spacious private van for seamless city transit
+5,New York,MTA Subway,11.0,11,false,Extensive network but not all stations have elevators
+6,New York,Access-A-Ride Transit,30.0,30,true,Dedicated paratransit service for eligible visitors
+7,Dubai,Dubai Metro,8.0,8,true,Fully driverless and 100% accessible train system
+8,Dubai,Luxury Sedan,150.0,150,false,Premium non-accessible chauffeured service
+9,London,The Tube (London Underground),12.0,15,false,Iconic but older stations lack step-free access
+10,London,Black Cab,75.0,90,true,All traditional black cabs have built-in wheelchair ramps
+11,Barcelona,TMB Bus Network,6.0,7,true,Almost fully accessible fleet covering the entire city
+12,Barcelona,Standard Taxi,45.0,50,false,Convenient point-to-point but standard sedans
+13,Singapore,MRT (Mass Rapid Transit),7.0,5.5,true,World-class accessibility with elevators everywhere
+14,Singapore,Grab Rideshare,35.0,26,false,Standard rideshares via app
+15,Bangkok,BTS Skytrain,5.0,5,true,Elevators available at most major stations
+16,Bangkok,Tuk-Tuk,15.0,15,false,Authentic local experience but highly inaccessible
+17,Bali,Private Driver,40.0,40,false,Most common way to get around standard vehicle
+18,Bali,Accessible Tour Van,90.0,90,true,Specially equipped tour vans for wheelchair users
+19,Venice,Vaporetto (Water Bus),25.0,26,true,Main public transport accessible via ramps
+20,Venice,Private Water Taxi,120.0,130,false,Expensive and requires stepping down into the boat
+21,Vienna,Wiener Linien Trams,8.0,9,true,Ultra-low floor trams allowing easy roll-on access
+22,Istanbul,Tram Line T1,5.0,5,true,Wheelchair accessible stations traversing main sights
+23,Istanbul,Dolmus (Minibus),10.0,10,false,Crowded shared transit with high steps
+24,New Delhi,Delhi Metro,6.0,6,true,Modern network with tactile paths and elevators
+25,New Delhi,Auto Rickshaw,12.0,12,false,Cheap open-air transit but hard to board
+26,Los Angeles,Metro BusLine,7.0,7,true,All buses equipped with ramps and securement areas
+27,Los Angeles,Rental Car,50.0,50,false,Standard vehicle rental without hand controls
+28,Rio de Janeiro,Metro Rio,6.0,6,true,Safe and clean with good basic accessibility
+29,Rio de Janeiro,Local Bus,4.0,4,false,Often crowded and boarding can be difficult
+30,Sydney,Sydney Trains & Ferries,12.0,12,true,Excellent access aboard ferries and main train hubs
+31,Cape Town,MyCiTi Bus,8.0,8,true,Modern reliable BRT system with level boarding
+32,Cape Town,Minibus Taxi,5.0,5,false,Informal transit that operates without fixed stops
+33,Nairobi,Matatu,4.0,4,false,Famous local buses loud and highly inaccessible
+34,Nairobi,Pre-booked Accessible Safari Jeep,120.0,120,true,Custom off-road vehicles with lift mechanisms
+35,Amsterdam,GVB Tram Network,9.0,10,true,Many lines are fully accessible with low floors
+36,Amsterdam,Bicycle Rental,15.0,16,false,The most Dutch way but requires balance and mobility

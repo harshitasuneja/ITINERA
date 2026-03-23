@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Your Trip – ITINERA</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/plan.css') }}">
+</head>
+<body class="plan-body">
+
+<nav id="navbar" role="navigation" aria-label="Main Navigation">
+  <h2 class="brand-name"><a href="/">ITINERA</a></h2>
+  <ul role="list">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#features">Features</a></li>
+    <li><a href="/#destinations">Destinations</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-icon" id="voiceToggle" aria-label="Voice assistant">🎙️</button>
+    <button class="btn-icon" onclick="toggleHighContrast()" aria-label="High contrast">◑</button>
+    <button class="btn-icon" onclick="increaseFontSize()" aria-label="Larger text">A+</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+</nav>
+
+<main class="plan-main" role="main">
+
+  <!-- SIDEBAR -->
+  <aside class="plan-sidebar" aria-label="Trip planning intro">
+    <p class="section-eyebrow">Step 1 of 1</p>
+    <h1 class="plan-title">Plan Your <span>Dream Trip</span></h1>
+    <p class="plan-desc">Fill in your preferences and our AI will craft a personalised itinerary — hotels, attractions, transport, and a smart budget split.</p>
+
+    <div class="voice-shortcut">
+      <p class="shortcut-label">🎙️ Prefer speaking?</p>
+      <button class="btn-outline" onclick="openVoiceForm()" style="width:100%;justify-content:center;" aria-label="Voice input">Use Voice Input</button>
+      <p class="voice-tip">Say: "3 days in Tokyo, budget 2000 dollars, wheelchair access"</p>
+    </div>
+
+    <div class="tip-box">
+      <strong>💡 Tip:</strong> Select accessibility needs to see only fully accessible hotels and attractions.
+    </div>
+  </aside>
+
+  <!-- FORM -->
+  <section class="plan-form-section" aria-label="Trip planning form">
+    <form id="planForm" class="plan-form" onsubmit="submitPlan(event)" novalidate>
+
+      <!-- Trip Basics -->
+      <fieldset class="form-fieldset">
+        <legend>🗺️ Trip Basics</legend>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="destination">Destination <span class="req">*</span></label>
+            <select id="destination" name="destination" required>
+              <option value="">Choose destination…</option>
+              <optgroup label="🌍 Europe">
+                <option value="London">🇬🇧 London, UK</option>
+                <option value="Paris">🇫🇷 Paris, France</option>
+                <option value="Barcelona">🇪🇸 Barcelona, Spain</option>
+                <option value="Amsterdam">🇳🇱 Amsterdam, Netherlands</option>
+                <option value="Venice">🇮🇹 Venice, Italy</option>
+                <option value="Vienna">🇦🇹 Vienna, Austria</option>
+              </optgroup>
+              <optgroup label="🌏 Asia">
+                <option value="Tokyo">🇯🇵 Tokyo, Japan</option>
+                <option value="Singapore">🇸🇬 Singapore</option>
+                <option value="Bangkok">🇹🇭 Bangkok, Thailand</option>
+                <option value="Bali">🇮🇩 Bali, Indonesia</option>
+                <option value="Istanbul">🇹🇷 Istanbul, Turkey</option>
+                <option value="New Delhi">🇮🇳 New Delhi, India</option>
+                <option value="Dubai">🇦🇪 Dubai, UAE</option>
+              </optgroup>
+              <optgroup label="🌎 Americas">
+                <option value="New York">🇺🇸 New York, USA</option>
+                <option value="Los Angeles">🇺🇸 Los Angeles, USA</option>
+                <option value="Rio de Janeiro">🇧🇷 Rio de Janeiro, Brazil</option>
+              </optgroup>
+              <optgroup label="🌐 Oceania & Africa">
+                <option value="Sydney">🇦🇺 Sydney, Australia</option>
+                <option value="Cape Town">🇿🇦 Cape Town, South Africa</option>
+                <option value="Nairobi">🇰🇪 Nairobi, Kenya</option>
+              </optgroup>
+            </select>
+            <div class="field-error"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="travel_style">Travel Style <span class="req">*</span></label>
+            <select id="travel_style" name="travel_style" required>
+              <option value="">Select style…</option>
+              <option value="budget">💸 Budget Explorer</option>
+              <option value="luxury">👑 Luxury Traveler</option>
+              <option value="adventure">🧗 Adventure Seeker</option>
+              <option value="cultural">🏛️ Cultural Enthusiast</option>
+              <option value="family">👨‍👩‍👧 Family Trip</option>
+            </select>
+            <div class="field-error"></div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="start_date">Departure <span class="req">*</span></label>
+            <input type="date" id="start_date" name="start_date" required>
+            <div class="field-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="end_date">Return <span class="req">*</span></label>
+            <input type="date" id="end_date" name="end_date" required>
+            <div class="field-error"></div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="num_days">Number of Days <span class="req">*</span></label>
+            <input type="number" id="num_days" name="num_days" min="1" max="21" placeholder="e.g. 3" required>
+            <div class="field-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="budget">Total Budget (USD $) <span class="req">*</span></label>
+            <input type="number" id="budget" name="budget" min="100" placeholder="e.g. 1500" required>
+            <div class="field-error"></div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="adults">Adults</label>
+            <select id="adults" name="adults">
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="children">Children</label>
+            <select id="children" name="children">
+              <option>0</option><option>1</option><option>2</option><option>3</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Activities -->
+      <fieldset class="form-fieldset">
+        <legend>🎯 Preferred Activities</legend>
+        <p class="fieldset-hint">Select all that interest you</p>
+        <div class="checkbox-grid" role="group">
+          <label class="check-pill"><input type="checkbox" name="activities" value="sightseeing"><span>🏛️ Sightseeing</span></label>
+          <label class="check-pill"><input type="checkbox" name="activities" value="history"><span>📜 History</span></label>
+          <label class="check-pill"><input type="checkbox" name="activities" value="food"><span>🍽️ Food</span></label>
+          <label class="check-pill"><input type="checkbox" name="activities" value="nature"><span>🌿 Nature</span></label>
+          <label class="check-pill"><input type="checkbox" name="activities" value="adventure"><span>🧗 Adventure</span></label>
+          <label class="check-pill"><input type="checkbox" name="activities" value="shopping"><span>🛍️ Shopping</span></label>
+        </div>
+      </fieldset>
+
+      <!-- Accessibility -->
+      <fieldset class="form-fieldset access-fieldset">
+        <legend>♿ Specially Abled?</legend>
+
+        <div class="form-group">
+          <label for="specially_abled">Does any traveler have accessibility needs?</label>
+          <select id="specially_abled" name="specially_abled" onchange="toggleAccessibility(this.value)">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </div>
+
+        <div id="accessibilitySection" style="display:none;">
+          <div class="form-group">
+            <label for="disability_type">Type of Disability</label>
+            <select id="disability_type" name="disability_type">
+              <option value="wheelchair">🦽 Wheelchair User</option>
+              <option value="blind">👁️ Visually Impaired / Blind</option>
+              <option value="deaf">👂 Deaf / Hard of Hearing</option>
+              <option value="mute">🔇 Mute</option>
+              <option value="other">🔹 Other</option>
+            </select>
+          </div>
+
+          <p class="fieldset-hint">Select all required accommodations:</p>
+          <div class="checkbox-grid" role="group">
+            <label class="check-pill check-accessible"><input type="checkbox" name="accessibility_needs" value="wheelchair accessible"><span>♿ Wheelchair</span></label>
+            <label class="check-pill check-accessible"><input type="checkbox" name="accessibility_needs" value="ramp access"><span>🔼 Ramp</span></label>
+            <label class="check-pill check-accessible"><input type="checkbox" name="accessibility_needs" value="elevator"><span>🛗 Elevator</span></label>
+            <label class="check-pill check-accessible"><input type="checkbox" name="accessibility_needs" value="accessible transport"><span>🚌 Transport</span></label>
+            <label class="check-pill check-accessible"><input type="checkbox" name="accessibility_needs" value="accessible hotel"><span>🏨 Hotel</span></label>
+            <label class="check-pill check-accessible"><input type="checkbox" name="accessibility_needs" value="audio guide"><span>🔊 Audio Guide</span></label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-primary btn-submit" id="submitBtn">
+          <span class="submit-text">Find Your Perfect Trip</span>
+          <span class="submit-loading" style="display:none;">⏳ Planning…</span>
+        </button>
+      </div>
+
+    </form>
+  </section>
+</main>
+
+<!-- VOICE OVERLAY -->
+<div id="voiceOverlay" class="voice-overlay" role="dialog" aria-modal="true" style="display:none;">
+  <div class="voice-modal">
+    <button class="voice-close" onclick="closeVoiceForm()">✕</button>
+    <div class="voice-icon">🎙️</div>
+    <h2>Voice Input</h2>
+    <p id="voiceStatus">Click the mic, then speak your trip details.</p>
+    <p class="voice-hint">Say: "3 days in Paris with 1500 dollar budget, wheelchair accessible"</p>
+    <div class="voice-wave" id="voiceWave" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <button class="btn-primary" id="micBtn" onclick="startVoiceInput()" style="width:100%;justify-content:center;">🎙️ Start Listening</button>
+    <div id="voiceResult" class="voice-result" aria-live="polite"></div>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/plan.js') }}"></script>
+</body>
+</html>

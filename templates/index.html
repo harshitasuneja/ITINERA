@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITINERA – AI Smart Travel Planner</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- ══ NAVBAR ══════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main Navigation">
+  <h2 class="brand-name"><a href="/">ITINERA</a></h2>
+
+  <ul role="list">
+    <li onclick="scrollTo('#home')"><a href="#home">Home</a></li>
+    <li onclick="scrollTo('#features')"><a href="#features">Features</a></li>
+    <li onclick="scrollTo('#destinations')"><a href="#destinations">Destinations</a></li>
+    <li onclick="scrollTo('#accessibility')"><a href="#accessibility">Accessibility</a></li>
+    <li onclick="scrollTo('#contact')"><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <button class="btn-icon" id="voiceToggle" aria-label="Voice assistant" title="Voice Assistant">🎙️</button>
+    <button class="btn-icon" onclick="toggleHighContrast()" aria-label="High contrast" title="High Contrast">◑</button>
+    <button class="btn-icon" onclick="increaseFontSize()" aria-label="Larger text" title="Larger Text">A+</button>
+    <a href="/plan" class="btn-primary">Get Started</a>
+  </div>
+
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+</nav>
+
+<!-- ══ HOME / HERO ══════════════════════════════════════════ -->
+<section id="home" class="hero">
+
+  <div class="hero-text">
+    <p class="hero-eyebrow">AI-Powered · Accessible · Worldwide</p>
+    <h1>Discover Your <span>Perfect Journey</span></h1>
+    <p>Explore breathtaking destinations, curated tours, and unforgettable experiences. Start your next adventure with us today.</p>
+
+    <div class="hero-cta">
+      <a href="/plan" class="btn-primary btn-large">Plan Your Trip</a>
+      <button class="btn-outline btn-large" id="voiceStart" aria-label="Voice plan">🎙️ Voice Plan</button>
+    </div>
+
+    <div class="hero-stats" role="list">
+      <div class="stat" role="listitem">
+        <span class="stat-num">20+</span>
+        <span class="stat-lbl">Cities</span>
+      </div>
+      <div class="stat-divider">|</div>
+      <div class="stat" role="listitem">
+        <span class="stat-num">100%</span>
+        <span class="stat-lbl">Accessible</span>
+      </div>
+      <div class="stat-divider">|</div>
+      <div class="stat" role="listitem">
+        <span class="stat-num">AI</span>
+        <span class="stat-lbl">Powered</span>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ══ FEATURES ═════════════════════════════════════════════ -->
+<section id="features" class="features-section" aria-label="Features">
+  <div class="section-header">
+    <p class="section-eyebrow">Why Choose ITINERA</p>
+    <h2 class="section-title">Travel Smarter. <span>Go Anywhere.</span></h2>
+    <p class="section-sub">Everything you need to plan the perfect trip — for every kind of traveler.</p>
+  </div>
+
+  <div class="features-grid" role="list">
+    <div class="feature-card" role="listitem" tabindex="0">
+      <div class="feature-icon">🤖</div>
+      <h3>AI Itinerary Builder</h3>
+      <p>Our engine creates day-by-day plans tailored to your budget, travel style, and pace.</p>
+    </div>
+    <div class="feature-card" role="listitem" tabindex="0">
+      <div class="feature-icon">♿</div>
+      <h3>Full Accessibility</h3>
+      <p>Wheelchair ramps, elevators, accessible transport — filtered to your exact needs.</p>
+    </div>
+    <div class="feature-card" role="listitem" tabindex="0">
+      <div class="feature-icon">🎙️</div>
+      <h3>Voice Assistant</h3>
+      <p>Speak your preferences and we'll fill the form. Itinerary read aloud for visually impaired users.</p>
+    </div>
+    <div class="feature-card" role="listitem" tabindex="0">
+      <div class="feature-icon">🌤️</div>
+      <h3>Smart Weather</h3>
+      <p>Climate-aware suggestions — if it rains, we automatically switch to indoor activities.</p>
+    </div>
+    <div class="feature-card" role="listitem" tabindex="0">
+      <div class="feature-icon">💰</div>
+      <h3>Smart Budget Split</h3>
+      <p>Automatic 40/30/20/10 allocation across hotels, transport, food, and activities.</p>
+    </div>
+    <div class="feature-card" role="listitem" tabindex="0">
+      <div class="feature-icon">🗺️</div>
+      <h3>Worldwide Coverage</h3>
+      <p>20+ cities across Europe, Asia, Americas, Africa and Oceania — and growing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DESTINATIONS ══════════════════════════════════════════ -->
+<section id="destinations" class="destinations-section" aria-label="Top Destinations">
+  <div class="section-header">
+    <p class="section-eyebrow">Explore the Globe</p>
+    <h2 class="section-title">Top <span>Destinations</span></h2>
+  </div>
+
+  <div class="dest-grid" role="list">
+    <article class="dest-card" role="listitem" tabindex="0" aria-label="Paris">
+      <div class="dest-img" style="background:linear-gradient(135deg,#1a2a6c,#b21f1f,#fdbb2d)"></div>
+      <div class="dest-info">
+        <h3>Paris</h3>
+        <p class="dest-tag">City of Light</p>
+        <p>Eiffel Tower, the Louvre & world-class cuisine.</p>
+        <div class="dest-badges">
+          <span class="badge accessible">♿ Accessible</span>
+          <span class="badge">🗼 Iconic</span>
+        </div>
+      </div>
+    </article>
+    <article class="dest-card" role="listitem" tabindex="0" aria-label="Tokyo">
+      <div class="dest-img" style="background:linear-gradient(135deg,#fc354c,#0abfbc)"></div>
+      <div class="dest-info">
+        <h3>Tokyo</h3>
+        <p class="dest-tag">The Future Now</p>
+        <p>Ancient temples meet neon-lit streets and sushi.</p>
+        <div class="dest-badges">
+          <span class="badge accessible">♿ Accessible</span>
+          <span class="badge">🌸 Culture</span>
+        </div>
+      </div>
+    </article>
+    <article class="dest-card" role="listitem" tabindex="0" aria-label="New York">
+      <div class="dest-img" style="background:linear-gradient(135deg,#1c1c1c,#485563)"></div>
+      <div class="dest-info">
+        <h3>New York</h3>
+        <p class="dest-tag">The Big Apple</p>
+        <p>Central Park, Times Square & the world in one city.</p>
+        <div class="dest-badges">
+          <span class="badge accessible">♿ Accessible</span>
+          <span class="badge">🗽 Iconic</span>
+        </div>
+      </div>
+    </article>
+    <article class="dest-card" role="listitem" tabindex="0" aria-label="Dubai">
+      <div class="dest-img" style="background:linear-gradient(135deg,#f7971e,#ffd200)"></div>
+      <div class="dest-info">
+        <h3>Dubai</h3>
+        <p class="dest-tag">City of the Future</p>
+        <p>Burj Khalifa, desert safaris & ultramodern living.</p>
+        <div class="dest-badges">
+          <span class="badge accessible">♿ Accessible</span>
+          <span class="badge">🏙️ Luxury</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ══ ACCESSIBILITY ════════════════════════════════════════ -->
+<section id="accessibility" class="access-section" aria-label="Accessibility">
+  <div class="access-layout">
+    <div class="access-text">
+      <p class="section-eyebrow">For Every Traveler</p>
+      <h2 class="section-title">Travel Without <span>Barriers</span></h2>
+      <p class="access-desc">ITINERA was built with inclusivity at its core. Whether you use a wheelchair, rely on a screen reader, or have hearing or visual impairments — we have you covered.</p>
+      <ul class="access-list" role="list">
+        <li>♿ Wheelchair-accessible hotels, ramps & paths</li>
+        <li>🔊 Full text-to-speech itinerary readout</li>
+        <li>🎙️ Voice input — plan hands-free</li>
+        <li>◑ High-contrast & large-text mode</li>
+        <li>🚌 Accessible public transport options</li>
+        <li>🛗 Elevator-available properties</li>
+      </ul>
+      <a href="/plan" class="btn-primary">Plan Accessible Trip</a>
+    </div>
+    <div class="access-visual" aria-hidden="true">
+      <div class="access-icon-grid">
+        <div class="big-icon">♿</div>
+        <div class="big-icon">🔊</div>
+        <div class="big-icon">🎙️</div>
+        <div class="big-icon">👁️</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ═══════════════════════════════════════════════ -->
+<section id="contact" class="contact-section" aria-label="Contact">
+  <div class="section-header">
+    <p class="section-eyebrow">Get in Touch</p>
+    <h2 class="section-title">We're Here to <span>Help</span></h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <span>📧</span>
+        <div><strong>Email</strong><p>hello@itinera.travel</p></div>
+      </div>
+      <div class="contact-item">
+        <span>📞</span>
+        <div><strong>Phone</strong><p>+1 800 ITINERA</p></div>
+      </div>
+      <div class="contact-item">
+        <span>🌍</span>
+        <div><strong>Coverage</strong><p>Available Worldwide</p></div>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="handleContact(event)" aria-label="Contact form">
+      <input type="text" placeholder="Your Name" aria-label="Your name" required>
+      <input type="email" placeholder="Your Email" aria-label="Your email" required>
+      <textarea rows="4" placeholder="Your message…" aria-label="Your message" required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+
+
+<!-- ══ VOICE OVERLAY ════════════════════════════════════════ -->
+<div id="voiceOverlay" class="voice-overlay" role="dialog" aria-modal="true" aria-label="Voice assistant" style="display:none;">
+  <div class="voice-modal">
+    <button class="voice-close" onclick="closeVoice()" aria-label="Close">✕</button>
+    <div class="voice-icon">🎙️</div>
+    <h2>Voice Assistant</h2>
+    <p id="voiceStatus">Click the mic and speak your travel plan.</p>
+    <p class="voice-hint">Example: "Plan a 3-day trip to Tokyo with a $2000 budget"</p>
+    <div class="voice-wave" id="voiceWave" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <button class="btn-primary" id="micBtn" onclick="startListening()" style="width:100%;justify-content:center;">🎙️ Start Listening</button>
+    <div id="voiceResult" class="voice-result" aria-live="polite"></div>
+    <a href="/plan" class="btn-outline" id="voiceGoBtn" style="display:none;width:100%;justify-content:center;margin-top:10px;">Go to Plan Page →</a>
+  </div>
+</div>
+
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Itinerary – ITINERA</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+<body class="result-body">
+
+<nav id="navbar" role="navigation" aria-label="Main Navigation">
+  <h2 class="brand-name"><a href="/">ITINERA</a></h2>
+  <ul role="list">
+    <li><a href="/">Home</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-icon" onclick="speakItinerary()" aria-label="Read aloud" title="Read Aloud">🔊</button>
+    <button class="btn-icon" onclick="stopSpeaking()" aria-label="Stop reading" title="Stop">⏹️</button>
+    <button class="btn-icon" onclick="toggleHighContrast()" aria-label="High contrast">◑</button>
+    <button class="btn-icon" onclick="increaseFontSize()" aria-label="Larger text">A+</button>
+    <a href="/plan" class="btn-primary">Plan Another</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+</nav>
+
+<main id="resultMain" class="result-main" role="main">
+
+  <!-- Loading -->
+  <div id="loadingState" class="loading-state" aria-live="polite">
+    <div class="loading-spinner"></div>
+    <p>Crafting your perfect itinerary…</p>
+  </div>
+
+  <!-- Content -->
+  <div id="itineraryContent" style="display:none;">
+
+    <!-- Hero Banner -->
+    <div class="result-hero">
+      <div class="result-hero-overlay"></div>
+      <div class="result-hero-text">
+        <p class="section-eyebrow">Your AI-Crafted Itinerary</p>
+        <h1 id="resultTitle" class="result-title">Loading…</h1>
+        <div class="result-meta" id="resultMeta"></div>
+      </div>
+    </div>
+
+    <div class="result-container">
+
+      <!-- TTS banner for blind users -->
+      <div class="tts-banner" id="ttsBanner" style="display:none;">
+        <span>🔊</span>
+        <span>Your itinerary will be read aloud.
+          <button class="tts-link" onclick="speakItinerary()">Start Reading</button> |
+          <button class="tts-link" onclick="stopSpeaking()">Stop</button>
+        </span>
+      </div>
+
+      <!-- Weather -->
+      <section class="weather-strip" id="weatherStrip" aria-label="Weather forecast"></section>
+
+      <!-- Budget -->
+      <section class="budget-section" id="budgetSection" aria-label="Budget breakdown">
+        <h2>💰 Budget Breakdown</h2>
+        <div class="budget-bars" id="budgetBars"></div>
+        <div class="budget-total" id="budgetTotal"></div>
+      </section>
+
+      <!-- Hotel -->
+      <section class="hotel-section" id="hotelSection" aria-label="Recommended hotel">
+        <h2>🏨 Your Hotel</h2>
+        <div class="hotel-card" id="hotelCard"></div>
+      </section>
+
+      <!-- Transport -->
+      <section class="transport-section" id="transportSection" aria-label="Transport">
+        <h2>🚌 Getting Around</h2>
+        <div class="transport-card" id="transportCard"></div>
+      </section>
+
+      <!-- Daily Plan -->
+      <section class="daily-section" id="dailySection" aria-label="Day by day itinerary">
+        <h2>📅 Day-by-Day Plan</h2>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <!-- Accessibility -->
+      <section class="access-info-section" id="accessInfoSection" style="display:none;" aria-label="Accessibility info">
+        <h2>♿ Accessibility Information</h2>
+        <div class="access-info-card" id="accessInfoCard"></div>
+      </section>
+
+      <!-- Actions -->
+      <div class="result-actions">
+        <button class="btn-primary" onclick="speakItinerary()">🔊 Read Aloud</button>
+        <button class="btn-outline" onclick="printItinerary()">🖨️ Print</button>
+        <a href="/plan" class="btn-outline">🔄 Plan Another Trip</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/result.js') }}"></script>
+</body>
+</html>
